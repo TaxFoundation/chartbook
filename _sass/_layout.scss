@@ -1,17 +1,25 @@
-html,
-body {
-  display: flex;
-  flex-direction: column;
+* {
+  box-sizing: border-box;
 }
 
-.page-content {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
+html,
+body {
+  height: 100vh;
 }
 
 header,
 nav,
 .slides {
   padding: 12px;
+}
+
+.container {
+  display: table;
+  width: 100%;
+}
+
+nav,
+.slides {
+  display: table-cell;
+  vertical-align: top;
 }
