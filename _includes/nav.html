@@ -1,3 +1,7 @@
 <nav>
-
+  <ul>
+  {% for page in site.posts %}
+    <li><a href="{{page.url | replace: '/', '#'}}">{{page.title}}</a></li>
+  {% endfor %}
+  </ul>
 </nav>
