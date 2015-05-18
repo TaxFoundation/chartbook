@@ -1,13 +1,13 @@
 header {
+  align-items: center;
   background-color: $brand-color;
   box-sizing: border-box;
   color: white;
   display: flex;
   height: 64px;
   justify-content: space-between;
-  padding: 12px;
   width: 100%;
-  @include set-font(20px);
+  @include set-font(24px);
 
   a {
     color: white;
@@ -19,13 +19,17 @@ header {
   }
 
   .chartbook-nav-icons {
-
+    i {
+      margin-left: 10px;
+    }
   }
 }
 
 nav {
   box-sizing: border-box;
+  display: block;
   height: 100%;
   overflow-y: auto;
   width: 256px;
+  @include set-font(16px);
 }

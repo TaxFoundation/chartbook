@@ -1,0 +1,12 @@
+section {
+  display: block;
+  @include set-font(16px);
+}
+
+.active-slide {
+  visibility: visible;
+}
+
+.hidden-slide {
+  visibility: hidden;
+}

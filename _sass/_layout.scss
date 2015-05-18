@@ -1,2 +1,17 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .page-content {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+header,
+nav,
+.slides {
+  padding: 12px;
 }
