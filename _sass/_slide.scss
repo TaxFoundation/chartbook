@@ -1,6 +1,20 @@
 section {
-  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
   @include set-font(16px);
+}
+
+.slides {
+  bottom: 0;
+  left: $nav-width;
+  position: absolute;
+  right: 0;
+  top: $header-height;
 }
 
 .active-slide {
@@ -9,4 +23,8 @@ section {
 
 .hidden-slide {
   visibility: hidden;
+}
+
+.page-container {
+
 }

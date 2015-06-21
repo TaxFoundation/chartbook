@@ -14,12 +14,11 @@ nav,
 }
 
 .container {
-  display: table;
+  height: 100%;
   width: 100%;
 }
 
 nav,
 .slides {
-  display: table-cell;
   vertical-align: top;
 }
