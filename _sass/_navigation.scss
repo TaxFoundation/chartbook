@@ -30,4 +30,10 @@ nav {
   overflow-y: auto;
   width: $nav-width;
   @include set-font(16px);
+
+  li {
+    height: $header-height;
+    padding: 12px;
+    width: inherit;
+  }
 }
