@@ -4,7 +4,7 @@ layout: default
 
 {% for s in site.slides %}
 
-<section>
+<section id="{{ s.title | slugify }}">
   {% include slide.html slide=s %}
 </section>
 

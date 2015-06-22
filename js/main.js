@@ -1,17 +1,18 @@
-(function() {
-  'use strict'
+'use strict'
 
-  var setSlide, nextSlide, previousSlide;
+function setSlide() {
+  var slide = window.location.hash || '#' + document.getElementsByTagName('section')[0].id;
+  $(slide).addClass('active-slide');
+};
 
-  setSlide = function() {
-    //TODO write function to find initial slide based on URL and set it
-  };
+function nextSlide() {
+  //TODO write next slide function
+};
 
-  nextSlide = function() {
-    //TODO write next slide function
-  };
+function previousSlide() {
+  //TODO write previous slide function
+};
 
-  previousSlide = function() {
-    //TODO write previous slide function
-  };
+$('document').ready(function() {
+  setSlide();
 });

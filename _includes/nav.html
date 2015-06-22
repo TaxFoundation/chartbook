@@ -1,7 +1,7 @@
 <nav>
   <ul>
-  {% for page in site.posts %}
-    <li><a href="{{page.url | replace: '/', '#'}}">{{page.title}}</a></li>
+  {% for slide in site.slides %}
+    <li><a href="#{{ slide.title | slugify }}">{{slide.title}}</a></li>
   {% endfor %}
   </ul>
 </nav>

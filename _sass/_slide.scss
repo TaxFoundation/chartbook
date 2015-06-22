@@ -5,6 +5,7 @@ section {
   position: absolute;
   right: 0;
   top: 0;
+  visibility: hidden;
   width: auto;
   @include set-font(16px);
 }
@@ -19,12 +20,4 @@ section {
 
 .active-slide {
   visibility: visible;
-}
-
-.hidden-slide {
-  visibility: hidden;
-}
-
-.page-container {
-
 }
