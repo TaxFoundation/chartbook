@@ -1,3 +1,7 @@
 <h1 class="slide-title">{{ include.slide.title }}</h1>
 
+{% if include.slide.chart %}
+  <img src="/images/{{ include.slide.chart }}">
+{% endif %}
+
 {{ include.slide.content }}
