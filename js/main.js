@@ -8,15 +8,23 @@ function setSlide() {
 function nextSlide() {
   var currentSlide = window.location.hash || '#' + document.getElementsByTagName('section')[0].id;
   var slide = $(currentSlide);
-  slide.removeClass('active-slide').next().addClass('active-slide');
-  window.location.hash = '#' + slide.next().attr('id');
+  var newSlide = slide.next();
+  if (newSlide.length) {
+    slide.removeClass('active-slide');
+    newSlide.addClass('active-slide');
+    window.location.hash = '#' + newSlide.attr('id');
+  }
 };
 
 function previousSlide() {
   var currentSlide = window.location.hash || '#' + document.getElementsByTagName('section')[0].id;
   var slide = $(currentSlide);
-  slide.removeClass('active-slide').prev().addClass('active-slide');
-  window.location.hash = '#' + slide.prev().attr('id');
+  var newSlide = slide.prev();
+  if (newSlide.length) {
+    slide.removeClass('active-slide');
+    newSlide.addClass('active-slide');
+    window.location.hash = '#' + newSlide.attr('id');
+  }
 };
 
 $('document').ready(function() {
