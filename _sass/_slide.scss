@@ -1,12 +1,8 @@
 section {
-  bottom: 0;
-  left: 0;
   display: none;
+  margin: 0 auto;
+  max-width: 1080px;
   padding: 12px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: auto;
   @include set-font(16px);
 }
 
@@ -20,4 +16,8 @@ section {
 
 .active-slide {
   display: block;
+}
+
+img {
+  width: 100%;
 }
