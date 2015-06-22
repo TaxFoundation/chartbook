@@ -7,5 +7,10 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://taxfoundation.org" # the base hostname & protocol for your site
 permalink: :title
+# Setup and configure collection for chartbook slides
+collections:
+  - slides    
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM

@@ -1,0 +1,11 @@
+h1 {
+  @include set-font(36px, 700);
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: 700;
+}

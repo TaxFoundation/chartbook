@@ -2,10 +2,10 @@
 layout: default
 ---
 
-{% for page in site.posts %}
+{% for s in site.slides %}
 
 <section>
-  {{ page.content }}
+  {% include slide.html slide=s %}
 </section>
 
 {% endfor %}
