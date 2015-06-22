@@ -1,11 +1,11 @@
 section {
   bottom: 0;
   left: 0;
+  display: none;
   padding: 12px;
   position: absolute;
   right: 0;
   top: 0;
-  visibility: hidden;
   width: auto;
   @include set-font(16px);
 }
@@ -19,5 +19,5 @@ section {
 }
 
 .active-slide {
-  visibility: visible;
+  display: block;
 }
