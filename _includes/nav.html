@@ -1,7 +1,7 @@
 <nav>
   <ul>
   {% for slide in site.slides %}
-    <li><a href="#{{ slide.title | slugify }}">{{slide.title}}</a></li>
+    <li onclick="changeSlide('{{ slide.title | slugify }}')">{{ slide.title }}</li>
   {% endfor %}
   </ul>
 </nav>

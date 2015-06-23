@@ -12,6 +12,10 @@ section {
   position: absolute;
   right: 0;
   top: $header-height;
+
+  @include media-query($on-palm) {
+    left: 0;
+  }
 }
 
 .active-slide {

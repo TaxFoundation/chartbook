@@ -13,14 +13,28 @@ header {
 
   .chartbook-name {
     display: table-cell;
+    vertical-align: middle;
   }
 
   .chartbook-nav-icons {
     display: table-cell;
     text-align: right;
+    vertical-align: middle;
 
     i {
       margin-left: 10px;
+    }
+  }
+
+  @include media-query($on-palm) {
+    @include set-font(16px);
+
+    .chartbook-nav-icons {
+      @include set-font(20px);
+
+      i {
+        margin-left: 15px;
+      }
     }
   }
 }
@@ -34,8 +48,14 @@ nav {
   width: $nav-width;
   @include set-font(16px);
 
+  @include media-query($on-palm) {
+    left: -$nav-width;
+    position: fixed;
+  }
+
   li {
     border: solid 1px #000;
+    cursor: pointer;
     height: $header-height;
     padding: 12px;
     width: inherit;

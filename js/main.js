@@ -1,9 +1,13 @@
 'use strict'
 
 function setSlide() {
+  if ($('.active-slide').length) {
+    $('.active-slide').removeClass('active-slide');
+  }
+
   var slide = window.location.hash || '#' + document.getElementsByTagName('section')[0].id;
   $(slide).addClass('active-slide');
-};
+}
 
 function nextSlide() {
   var currentSlide = window.location.hash || '#' + document.getElementsByTagName('section')[0].id;
@@ -14,7 +18,7 @@ function nextSlide() {
     newSlide.addClass('active-slide');
     window.location.hash = '#' + newSlide.attr('id');
   }
-};
+}
 
 function previousSlide() {
   var currentSlide = window.location.hash || '#' + document.getElementsByTagName('section')[0].id;
@@ -25,7 +29,12 @@ function previousSlide() {
     newSlide.addClass('active-slide');
     window.location.hash = '#' + newSlide.attr('id');
   }
-};
+}
+
+function changeSlide(slide) {
+  window.location.hash = '#' + slide;
+  setSlide();
+}
 
 $('document').ready(function() {
   setSlide();
