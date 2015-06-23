@@ -5,8 +5,15 @@ function setSlide() {
     $('.active-slide').removeClass('active-slide');
   }
 
-  var slide = window.location.hash || '#' + document.getElementsByTagName('section')[0].id;
-  $(slide).addClass('active-slide');
+  var firstSlide = '#' + document.getElementsByTagName('section')[0].id;
+  var slide = window.location.hash || firstSlide;
+  var slideSection = $(slide);
+  if (slideSection.length) {
+    slideSection.addClass('active-slide');
+  } else {
+    window.location.hash = firstSlide;
+    $(firstSlide).addClass('active-slide');
+  }
 }
 
 function nextSlide() {
