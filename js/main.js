@@ -1,5 +1,6 @@
 'use strict'
 
+// Initialize slide to display given any hash route
 function setSlide() {
   if ($('.active-slide').length) {
     $('.active-slide').removeClass('active-slide');
@@ -41,10 +42,11 @@ function previousSlide() {
 function changeSlide(slide) {
   window.location.hash = '#' + slide;
   setSlide();
+  toggleNavMenu();
 }
 
 function toggleNavMenu() {
-  var navMenu = $('nav');
+  var navMenu = $('#nav-menu');
   if (navMenu.hasClass('nav-open-mobile')) {
     navMenu.removeClass('nav-open-mobile');
   } else {
@@ -52,17 +54,24 @@ function toggleNavMenu() {
   }
 }
 
+// Use Hammer.js for swipe actions
 var chartbook = document.getElementById('chartbook');
+var menu = document.getElementById('nav-menu');
 
-var hammer = new Hammer(chartbook);
+var slideSwipe = new Hammer(chartbook);
+var menuSwipe = new Hammer(menu);
 
-hammer.on('swipeleft', function() {
+slideSwipe.on('swipeleft', function() {
   nextSlide();
 });
 
-hammer.on('swiperight', function() {
+slideSwipe.on('swiperight', function() {
   previousSlide();
 });
+
+menuSwipe.on('swipeleft', function() {
+  toggleNavMenu();
+})
 
 $('document').ready(function() {
   setSlide();

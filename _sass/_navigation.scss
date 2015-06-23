@@ -5,7 +5,7 @@ header {
   color: $header-font-color;
   display: table;
   height: $header-height;
-  position: relative;
+  position: fixed;
   width: 100%;
   z-index: 20;
   @include set-font(24px);
@@ -49,7 +49,7 @@ nav {
   box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.3);
   left: 0;
   overflow-y: auto;
-  position: absolute;
+  position: fixed;
   top: $header-height;
   transition: left 0.5s ease-in-out;
   width: $nav-width;
