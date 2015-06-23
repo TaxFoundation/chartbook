@@ -1,6 +1,6 @@
 header {
   background-color: $brand-color;
-  color: white;
+  color: $header-font-color;
   display: table;
   height: $header-height;
   width: 100%;
@@ -40,7 +40,9 @@ header {
 }
 
 nav {
+  background-color: $nav-background-color;
   bottom: 0;
+  box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.2);
   left: 0;
   overflow-y: auto;
   position: absolute;
@@ -54,9 +56,9 @@ nav {
   }
 
   li {
-    border: solid 1px #000;
+    border-bottom: solid 1px $nav-border-color;
     cursor: pointer;
-    height: $header-height;
+    min-height: $header-height / 2;
     padding: 12px;
     width: inherit;
   }
