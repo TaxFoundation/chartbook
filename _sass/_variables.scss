@@ -15,3 +15,10 @@ $nav-border-color: #dedede;
 // Screen sizes
 $on-palm:          800px;
 $on-laptop:        1080px;
+
+// Typograpgy
+// Our variables
+$base-font-family: Lato, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
