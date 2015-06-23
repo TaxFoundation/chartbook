@@ -6,7 +6,7 @@
 <p class="share-buttons">
   <a
     class="social-link facebook"
-    href="http://www.facebook.com/share.php?u={{ include.slide.title | slugify | uri_escape | prepend: site.url }}"
+    href="http://www.facebook.com/share.php?u={{ include.slide.title | slugify | prepend: site.url | uri_escape }}"
     id="fb-share"
     rel="nofollow"
     target="_blank"
@@ -15,7 +15,7 @@
   </a>
   <a
     class="social-link twitter"
-    href="http://twitter.com/home?status={{ include.slide.title | urlencode }}%20via%20@TaxFoundation%20{{ include.slide.title | slugify | uri_escape | prepend: site.url }}"
+    href="https://twitter.com/intent/tweet/?text={{ include.slide.title | uri_escape }}&url={{ include.slide.title | slugify | prepend: site.url | uri_escape }}&via=TaxFoundation"
     id="tweet"
     rel="nofollow"
     target="_blank"
@@ -24,7 +24,7 @@
   </a>
   <a
     class="social-link linkedin"
-    href="http://www.linkedin.com/shareArticle?mini=true&url={{ include.slide.title | slugify | uri_escape | prepend: site.url }}"
+    href="http://www.linkedin.com/shareArticle?mini=true&url={{ include.slide.title | slugify | prepend: site.url | uri_escape }}"
     id="linkedin"
     rel="nofollow"
     target="_blank"
@@ -33,14 +33,14 @@
   </a>
   <a
     class="social-link gplus"
-    href="https://plus.google.com/share?url={{ include.slide.title | slugify | uri_escape | prepend: site.url }}"
+    href="https://plus.google.com/share?url={{ include.slide.title | slugify | prepend: site.url | uri_escape }}"
     id="gplus-share"
     title="Plus 1 on Google+">
       <i class="fa fa-google-plus"></i>
   </a>
   <a
     class="social-link email"
-    href="mailto:?body=Take a look at this chart I found: {{ include.slide.title }}. You can see it here: {{ include.slide.title | slugify | uri_escape | prepend: site.url }}"
+    href="mailto:?body=Take a look at this chart I found: {{ include.slide.title }}. You can see it here: {{ include.slide.title | slugify | prepend: site.url | uri_escape }}"
     id="email-share"
     title="Email to a Friend">
       <i class="fa fa-envelope"></i>
