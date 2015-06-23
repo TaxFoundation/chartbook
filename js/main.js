@@ -45,6 +45,18 @@ function toggleNavMenu() {
   }
 }
 
+var chartbook = document.getElementById('chartbook');
+
+var hammer = new Hammer(chartbook);
+
+hammer.on('swipeleft', function() {
+  nextSlide();
+});
+
+hammer.on('swiperight', function() {
+  previousSlide();
+});
+
 $('document').ready(function() {
   setSlide();
 });
