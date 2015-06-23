@@ -14,9 +14,9 @@ function nextSlide() {
   var slide = $(currentSlide);
   var newSlide = slide.next();
   if (newSlide.length) {
+    window.location.hash = '#' + newSlide.attr('id');
     slide.removeClass('active-slide');
     newSlide.addClass('active-slide');
-    window.location.hash = '#' + newSlide.attr('id');
   }
 }
 
@@ -25,9 +25,9 @@ function previousSlide() {
   var slide = $(currentSlide);
   var newSlide = slide.prev();
   if (newSlide.length) {
+    window.location.hash = '#' + newSlide.attr('id');
     slide.removeClass('active-slide');
     newSlide.addClass('active-slide');
-    window.location.hash = '#' + newSlide.attr('id');
   }
 }
 
