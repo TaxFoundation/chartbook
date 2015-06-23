@@ -25,3 +25,55 @@ section {
 img {
   width: 100%;
 }
+
+a.social-link {
+  display:inline-block;
+  background-color: #fff;
+  color: #ccc;
+  text-decoration:none;
+  padding:6px 12px;
+  margin: 0 .5rem 0 0;
+  -webkit-transition: background 0.1s linear;
+  -moz-transition: background 0.1s linear;
+  -ms-transition: background 0.1s linear;
+  -o-transition: background 0.1s linear;
+  transition: background 0.1s linear;
+}
+
+a.social-link-no-bg {
+  display:inline-block;
+  color: #fff;
+  text-decoration:none;
+  padding:6px 12px;
+  margin: 16px 8px 0 0;
+  -webkit-transition: background 0.1s linear;
+  -moz-transition: background 0.1s linear;
+  -ms-transition: background 0.1s linear;
+  -o-transition: background 0.1s linear;
+  transition: background 0.1s linear;
+}
+
+a:hover.facebook {
+  background-color:#4a66b7;
+  color: #fff;
+}
+
+a:hover.twitter {
+  background-color:#00acee;
+  color: #fff;
+}
+
+a:hover.linkedin {
+  background-color:#1b86bc;
+  color: #fff;
+}
+
+a:hover.gplus {
+  background-color:#dd4b38;
+  color: #fff;
+}
+
+a:hover.email {
+  background-color:#ff9600;
+  color: #fff;
+}

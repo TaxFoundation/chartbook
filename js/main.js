@@ -4,6 +4,7 @@
 function setSlide() {
   if ($('.active-slide').length) {
     $('.active-slide').removeClass('active-slide');
+    $('.active-li').removeClass('active-li');
   }
 
   var firstSlide = '#' + document.getElementsByTagName('section')[0].id;
@@ -11,6 +12,7 @@ function setSlide() {
   var slideSection = $(slide);
   if (slideSection.length) {
     slideSection.addClass('active-slide');
+    $('li[onclick*="' + slide + '"').addClass('active-li');
   } else {
     window.location.hash = firstSlide;
     $(firstSlide).addClass('active-slide');
@@ -40,7 +42,7 @@ function previousSlide() {
 }
 
 function changeSlide(slide) {
-  window.location.hash = '#' + slide;
+  window.location.hash = slide;
   setSlide();
   toggleNavMenu();
 }

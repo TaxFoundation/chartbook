@@ -70,6 +70,10 @@ nav {
     padding: 12px;
     width: inherit;
   }
+
+  .active-li {
+    background-color: lighten($nav-background-color, 10%);
+  }
 }
 
 .nav-button {
