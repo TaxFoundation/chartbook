@@ -47,12 +47,15 @@ nav {
   overflow-y: auto;
   position: absolute;
   top: $header-height;
+  transition: left 0.5s ease-in-out;
   width: $nav-width;
+  z-index: 10;
   @include set-font(16px);
 
   @include media-query($on-palm) {
-    left: -$nav-width;
+    left: -100%;
     position: fixed;
+    width: 100%;
   }
 
   li {
@@ -66,4 +69,17 @@ nav {
 
 .nav-button {
   cursor: pointer;
+}
+
+.nav-open-mobile {
+  left: 0;
+}
+
+.nav-menu-toggle {
+  display: none;
+
+  @include media-query($on-laptop) {
+    display: inline-block;
+    margin: 0 10px  0 0;
+  }
 }

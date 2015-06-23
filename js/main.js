@@ -36,6 +36,15 @@ function changeSlide(slide) {
   setSlide();
 }
 
+function toggleNavMenu() {
+  var navMenu = $('nav');
+  if (navMenu.hasClass('nav-open-mobile')) {
+    navMenu.removeClass('nav-open-mobile');
+  } else {
+    navMenu.addClass('nav-open-mobile');
+  }
+}
+
 $('document').ready(function() {
   setSlide();
 });
