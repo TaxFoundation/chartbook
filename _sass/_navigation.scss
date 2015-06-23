@@ -26,7 +26,7 @@ header {
     }
   }
 
-  @include media-query($on-palm) {
+  @include media-query($on-laptop) {
     @include set-font(16px);
 
     .chartbook-nav-icons {
@@ -52,7 +52,7 @@ nav {
   z-index: 10;
   @include set-font(16px);
 
-  @include media-query($on-palm) {
+  @include media-query($on-laptop) {
     left: -100%;
     position: fixed;
     width: 100%;

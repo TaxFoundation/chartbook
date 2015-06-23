@@ -13,7 +13,7 @@ section {
   right: 0;
   top: $header-height;
 
-  @include media-query($on-palm) {
+  @include media-query($on-laptop) {
     left: 0;
   }
 }
