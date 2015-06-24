@@ -1,5 +1,49 @@
-h1 {
-  @include set-font(36px, 700);
+header {
+  @include set-font(24px, $base-font-weight, $base-line-height, $header-font-color);
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  @include media-query($on-laptop) {
+    @include set-font(16px, $base-font-weight, $base-line-height, $header-font-color);
+
+    .chartbook-nav-icons {
+      @include set-font(20px, $base-font-weight, $base-line-height, $header-font-color);
+
+      i {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+section h1 {
+  margin: 0 0 14px 0;
+  @include set-font(36px, 700, 1.3);
+
+  @include media-query($on-palm) {
+    @include set-font(24px, 700, 1.2);
+  }
+}
+
+section h2 {
+  font-style: italic;
+  margin: 0 0 10px 0;
+  @include set-font(24px, $base-font-weight, 1.4);
+
+  @include media-query($on-palm) {
+    @include set-font(18px, $base-font-weight, 1.2);
+  }
+}
+
+section p {
+  @include set-font();
+
+  @include media-query($on-palm) {
+    @include set-font(14px, $base-font-weight, 1.4);
+  }
 }
 
 em {
@@ -10,7 +54,10 @@ strong {
   font-weight: 700;
 }
 
-nav li {
-  text-transform: uppercase;
-  vertical-align: middle;
+nav {
+  @include set-font(16px);
+}
+
+.share-buttons {
+  @include set-font();
 }

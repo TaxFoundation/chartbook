@@ -2,18 +2,11 @@ header {
   background-color: $brand-color;
   border-bottom: solid 1px darken($brand-color, 5%);
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
-  color: $header-font-color;
   display: table;
   height: $header-height;
   position: fixed;
   width: 100%;
   z-index: 20;
-  @include set-font(24px);
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
 
   .chartbook-name {
     display: table-cell;
@@ -29,18 +22,6 @@ header {
       margin-left: 10px;
     }
   }
-
-  @include media-query($on-laptop) {
-    @include set-font(16px);
-
-    .chartbook-nav-icons {
-      @include set-font(20px);
-
-      i {
-        margin-left: 15px;
-      }
-    }
-  }
 }
 
 nav {
@@ -54,7 +35,6 @@ nav {
   @include transition(left 0.5s ease-in-out);
   width: $nav-width;
   z-index: 10;
-  @include set-font(16px);
 
   @include media-query($on-laptop) {
     box-shadow: none;
@@ -70,6 +50,7 @@ nav {
     min-height: $header-height / 2;
     padding: 12px;
     @include transition(background 0.1s linear);
+    vertical-align: middle;
     width: inherit;
 
     &:hover {

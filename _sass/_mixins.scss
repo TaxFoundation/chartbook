@@ -11,7 +11,8 @@
   }
 }
 
-@mixin set-font($size: $base-font-size, $weight: 400, $line-height: $base-line-height) {
+@mixin set-font($size: $base-font-size, $weight: $base-font-weight, $line-height: $base-line-height, $color: $base-font-color) {
+  color: $color;
   font-family: $base-font-family;
   font-size: $size;
   font-weight: $weight;
