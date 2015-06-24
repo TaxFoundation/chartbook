@@ -13,17 +13,16 @@ $nav-background-color: #ececec;
 $nav-border-color: #dedede;
 
 $palette-colors: (
-  red:    #f44336,
-  pink:   #e91e63,
-  purple: #673ab7,
-  blue:   #2196f3,
-  cyan:   #00bcd4,
-  teal:   #009688,
-  green:  #4caf50,
-  yellow: #ffeb38,
-  amber:  #ffc107,
-  orange: #ff9800,
-  grey:   #9e9e9e
+  material-red:    (#f44336, #ff1744),
+  material-pink:   (#e91e63, #f50057),
+  material-purple: (#673ab7, #651fff),
+  material-blue:   (#2196f3, #2979ff),
+  material-cyan:   (#00bcd4, #00e5ff),
+  material-teal:   (#009688, #1de9b6),
+  material-green:  (#4caf50, #00e676),
+  material-yellow: (#ffeb38, #ffea00),
+  material-amber:  (#ffc107, #ffc400),
+  material-orange: (#ff9800, #ff9100)
 );
 
 // Screen sizes

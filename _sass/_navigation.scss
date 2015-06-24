@@ -81,14 +81,14 @@ nav {
 
   @each $palette-color, $palette-value in $palette-colors {
     .li-#{$palette-color} {
-      background: $palette-value;
+      background: nth($palette-value, 1);
       color: #fff;
     }
     .li-#{$palette-color}:hover {
-      background: lighten($palette-value, 10%);
+      background: lighten(nth($palette-value, 2), 10%);
     }
     .li-#{$palette-color}.active-li {
-      background: lighten($palette-value, 10%);
+      background: lighten(nth($palette-value, 2), 10%);
     }
   }
 }
