@@ -65,11 +65,15 @@ img.chart-square {
 a.social-link {
   display:inline-block;
   background-color: #fff;
-  color: #ccc;
+  color: #aaa;
   text-decoration:none;
   padding:6px 12px;
   margin: 0 16px 0 0;
   @include transition(background 0.1s linear);
+
+  span.hide-on-small {
+    margin: 0 0 0 12px;
+  }
 
   @include media-query($on-palm) {
     color: #fff;

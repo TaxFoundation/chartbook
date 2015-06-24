@@ -7,14 +7,8 @@ header {
   }
 
   @include media-query($on-laptop) {
-    @include set-font(16px, $base-font-weight, $base-line-height, $header-font-color);
-
-    .chartbook-nav-icons {
-      @include set-font(20px, $base-font-weight, $base-line-height, $header-font-color);
-
-      i {
+    .chartbook-nav-icons i {
         margin-left: 15px;
-      }
     }
   }
 }
