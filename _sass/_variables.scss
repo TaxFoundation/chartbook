@@ -12,6 +12,20 @@ $nav-font-color: #fff;
 $nav-background-color: #ececec;
 $nav-border-color: #dedede;
 
+$palette-colors: (
+  red:    #f44336,
+  pink:   #e91e63,
+  purple: #673ab7,
+  blue:   #2196f3,
+  cyan:   #00bcd4,
+  teal:   #009688,
+  green:  #4caf50,
+  yellow: #ffeb38,
+  amber:  #ffc107,
+  orange: #ff9800,
+  grey:   #9e9e9e
+);
+
 // Screen sizes
 $on-palm:          800px;
 $on-laptop:        1080px;

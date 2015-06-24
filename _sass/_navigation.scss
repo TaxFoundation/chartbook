@@ -69,10 +69,27 @@ nav {
     min-height: $header-height / 2;
     padding: 12px;
     width: inherit;
+
+    &:hover {
+      background-color: lighten($nav-background-color, 10%);
+    }
+
+    &.active-li {
+      background-color: lighten($nav-background-color, 10%);
+    }
   }
 
-  .active-li {
-    background-color: lighten($nav-background-color, 10%);
+  @each $palette-color, $palette-value in $palette-colors {
+    .li-#{$palette-color} {
+      background: $palette-value;
+      color: #fff;
+    }
+    .li-#{$palette-color}:hover {
+      background: lighten($palette-value, 10%);
+    }
+    .li-#{$palette-color}.active-li {
+      background: lighten($palette-value, 10%);
+    }
   }
 }
 
