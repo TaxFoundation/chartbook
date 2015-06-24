@@ -53,27 +53,9 @@ a.social-link-no-bg {
   transition: background 0.1s linear;
 }
 
-a:hover.facebook {
-  background-color:#4a66b7;
-  color: #fff;
-}
-
-a:hover.twitter {
-  background-color:#00acee;
-  color: #fff;
-}
-
-a:hover.linkedin {
-  background-color:#1b86bc;
-  color: #fff;
-}
-
-a:hover.gplus {
-  background-color:#dd4b38;
-  color: #fff;
-}
-
-a:hover.email {
-  background-color:#ff9600;
-  color: #fff;
+@each $social-media, $social-color in $social-colors {
+  a:hover.#{$social-media} {
+    background-color: $social-color;
+    color: #fff;
+  }
 }
