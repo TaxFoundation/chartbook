@@ -11,9 +11,17 @@
   }
 }
 
-@mixin set-font($size: 16px, $weight: 400, $line-height: 1.5) {
+@mixin set-font($size: $base-font-size, $weight: 400, $line-height: $base-line-height) {
   font-family: $base-font-family;
   font-size: $size;
   font-weight: $weight;
   line-height: $line-height;
+}
+
+@mixin transition($params) {
+  -webkit-transition: $params;
+  -moz-transition: $params;
+  -ms-transition: $params;
+  -o-transition: $params;
+  transition: $params;
 }
