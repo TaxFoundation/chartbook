@@ -19,7 +19,7 @@ $palette-colors: (
   material-blue:   (#2196f3, #64B5F6),
   material-cyan:   (#00bcd4, #00e5ff),
   material-teal:   (#009688, #1de9b6),
-  material-green:  (#4caf50, #00C853),
+  material-green:  (#4caf50, #66BB6A),
   material-yellow: (#ffeb38, #ffea00),
   material-amber:  (#ffc107, #FFD740),
   material-orange: (#ff9800, #FFAB40)
@@ -34,7 +34,7 @@ $social-colors: (
 );
 
 // Screen sizes
-$on-palm:          800px;
+$on-palm:          800px;  // Value also set in main.js for swipe controls
 $on-laptop:        1080px;
 $breakpoints: (
   small: 800px,
@@ -42,7 +42,6 @@ $breakpoints: (
 );
 
 // Typograpgy
-// Our variables
 $base-font-family: Lato, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;

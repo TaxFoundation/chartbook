@@ -1,6 +1,6 @@
 'use strict';
 
-// Initialize slide to display given any hash route
+// Initialize slide to display content for any given hash route
 function setSlide() {
   if ($('.active-slide').length) {
     $('.active-slide').removeClass('active-slide');
@@ -19,6 +19,7 @@ function setSlide() {
   }
 }
 
+// Set specified slide as .active-slide, all before as .previous-slide, and all after as .next-slide
 function setSlideClasses(slide) {
   var nextSlide = slide.nextAll();
   var previousSlide = slide.prevAll();
@@ -32,31 +33,27 @@ function setSlideClasses(slide) {
   }
 }
 
+// Transition to the next slide
 function nextSlide() {
-  var currentSlide = window.location.hash || '#' + document.getElementsByTagName('section')[0].id;
-  var slide = $(currentSlide);
+  var slide = $('.active-slide');
   var newSlide = slide.next();
   if (newSlide.length) {
     slideTransition(slide, newSlide, 'next');
   }
 }
 
+// Transition to the previous slide
 function previousSlide() {
-  var currentSlide = window.location.hash || '#' + document.getElementsByTagName('section')[0].id;
-  var slide = $(currentSlide);
+  var slide = $('.active-slide');
   var newSlide = slide.prev();
   if (newSlide.length) {
     slideTransition(slide, newSlide, 'previous');
   }
 }
 
+// Handle transitions and their animations through CSS classes
 function slideTransition(slide, newSlide, direction) {
-  var otherDirection;
-  if (direction === 'next') {
-    otherDirection = 'previous';
-  } else if (direction === 'previous') {
-    otherDirection = 'next';
-  }
+  var otherDirection = direction === 'next' ? 'previous' : 'next';
 
   window.location.hash = '#' + newSlide.attr('id');
   $('.active-li').removeClass('active-li');
@@ -65,12 +62,14 @@ function slideTransition(slide, newSlide, direction) {
   newSlide.removeClass(direction + '-slide').addClass('active-slide');
 }
 
+// Change slides from the nav menu
 function changeSlide(slide) {
   window.location.hash = slide;
   setSlide();
   toggleNavMenu();
 }
 
+// Toggles nav menu visibility on mobile; has no effect on desktop
 function toggleNavMenu() {
   var navMenu = $('#nav-menu');
   if (navMenu.hasClass('nav-open-mobile')) {
@@ -80,24 +79,26 @@ function toggleNavMenu() {
   }
 }
 
-// Use Hammer.js for swipe actions
-var chartbook = document.getElementById('slides');
-var menu = document.getElementById('nav-menu');
+// Use Hammer.js for swipe actions; only created if screen size <= 800px
+if ($(window).width() <= 800) {
+  var chartbook = document.getElementById('slides');
+  var menu = document.getElementById('nav-menu');
 
-var slideSwipe = new Hammer(chartbook);
-var menuSwipe = new Hammer(menu);
+  var slideSwipe = new Hammer(chartbook);
+  var menuSwipe = new Hammer(menu);
 
-slideSwipe.on('swipeleft', function() {
-  nextSlide();
-});
+  slideSwipe.on('swipeleft', function() {
+    nextSlide();
+  });
 
-slideSwipe.on('swiperight', function() {
-  previousSlide();
-});
+  slideSwipe.on('swiperight', function() {
+    previousSlide();
+  });
 
-menuSwipe.on('swipeleft', function() {
-  toggleNavMenu();
-})
+  menuSwipe.on('swipeleft', function() {
+    toggleNavMenu();
+  })
+}
 
 $('document').ready(function() {
   setSlide();
