@@ -1,11 +1,11 @@
 section {
   bottom: 0;
   left: $nav-width;
-  margin: 0 auto;
-  max-width: 1080px;
   opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 12px 40px;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: $header-height;
   visibility: hidden;
@@ -22,9 +22,9 @@ section {
   }
 }
 
-.slides {
-  overflow-x: hidden;
-  overflow-y: auto;
+.slide-container {
+  margin: 0 auto;
+  max-width: 1080px;
 }
 
 .active-slide,

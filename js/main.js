@@ -54,17 +54,15 @@ function slideTransition(slide, newSlide, direction) {
   var otherDirection;
   if (direction === 'next') {
     otherDirection = 'previous';
-    slide.addClass(otherDirection + '-slide').removeClass('active-slide');
-    newSlide.removeClass(direction + '-slide').addClass('active-slide');
   } else if (direction === 'previous') {
     otherDirection = 'next';
-    slide.addClass(otherDirection + '-slide').removeClass('active-slide');
-    newSlide.removeClass(direction + '-slide').addClass('active-slide');
   }
 
   window.location.hash = '#' + newSlide.attr('id');
   $('.active-li').removeClass('active-li');
   $('li[onclick*="#' + newSlide.attr('id') + '"').addClass('active-li');
+  slide.addClass(otherDirection + '-slide').removeClass('active-slide');
+  newSlide.removeClass(direction + '-slide').addClass('active-slide');
 }
 
 function changeSlide(slide) {
@@ -83,7 +81,7 @@ function toggleNavMenu() {
 }
 
 // Use Hammer.js for swipe actions
-var chartbook = document.getElementById('chartbook');
+var chartbook = document.getElementById('slides');
 var menu = document.getElementById('nav-menu');
 
 var slideSwipe = new Hammer(chartbook);
