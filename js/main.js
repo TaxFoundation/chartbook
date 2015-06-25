@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Initialize slide to display given any hash route
 function setSlide() {
@@ -24,9 +24,7 @@ function nextSlide() {
   var slide = $(currentSlide);
   var newSlide = slide.next();
   if (newSlide.length) {
-    window.location.hash = '#' + newSlide.attr('id');
-    slide.removeClass('active-slide');
-    newSlide.addClass('active-slide');
+    slideTransition(slide, newSlide);
   }
 }
 
@@ -35,10 +33,16 @@ function previousSlide() {
   var slide = $(currentSlide);
   var newSlide = slide.prev();
   if (newSlide.length) {
-    window.location.hash = '#' + newSlide.attr('id');
-    slide.removeClass('active-slide');
-    newSlide.addClass('active-slide');
+    slideTransition(slide, newSlide);
   }
+}
+
+function slideTransition(slide, newSlide) {
+  window.location.hash = '#' + newSlide.attr('id');
+  $('.active-li').removeClass('active-li');
+  $('li[onclick*="#' + newSlide.attr('id') + '"').addClass('active-li');
+  slide.removeClass('active-slide');
+  newSlide.addClass('active-slide');
 }
 
 function changeSlide(slide) {

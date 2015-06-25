@@ -1,11 +1,20 @@
 section {
-  display: none;
+  bottom: 0;
+  left: $nav-width;
   margin: 0 auto;
   max-width: 1080px;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 12px 40px;
+  position: absolute;
+  right: 0;
+  top: $header-height;
+  visibility: hidden;
+  @include transition(transform 0.5s ease-in-out);
   @include set-font(16px);
 
   @include media-query($on-laptop) {
+    left: 0;
     padding: 12px 20px;
   }
 
@@ -14,20 +23,18 @@ section {
   }
 }
 
-.slides {
-  bottom: 0;
-  left: $nav-width;
-  position: absolute;
-  right: 0;
-  top: $header-height;
-
-  @include media-query($on-laptop) {
-    left: 0;
-  }
+.active-slide,
+.next-slide,
+.previous-slide {
+  visibility: visible;
 }
 
-.active-slide {
-  display: block;
+.next-slide {
+  transform: translateX(100%);
+}
+
+.previous-slide {
+  transform: translateX(-100%);
 }
 
 img.chart-wide {
