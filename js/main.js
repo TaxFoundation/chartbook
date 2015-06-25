@@ -11,11 +11,24 @@ function setSlide() {
   var slide = window.location.hash || firstSlide;
   var slideSection = $(slide);
   if (slideSection.length) {
-    slideSection.addClass('active-slide');
+    setSlideClasses(slideSection);
     $('li[onclick*="' + slide + '"').addClass('active-li');
   } else {
     window.location.hash = firstSlide;
-    $(firstSlide).addClass('active-slide');
+    setSlideClasses($(firstSlide));
+  }
+}
+
+function setSlideClasses(slide) {
+  var nextSlide = slide.nextAll();
+  var previousSlide = slide.prevAll();
+  slide.removeAttr('class').addClass('active-slide');
+  if (nextSlide.length) {
+    nextSlide.removeAttr('class').addClass('next-slide');
+  }
+
+  if (previousSlide.length) {
+    previousSlide.removeAttr('class').addClass('previous-slide');
   }
 }
 
@@ -24,7 +37,7 @@ function nextSlide() {
   var slide = $(currentSlide);
   var newSlide = slide.next();
   if (newSlide.length) {
-    slideTransition(slide, newSlide);
+    slideTransition(slide, newSlide, 'next');
   }
 }
 
@@ -33,16 +46,25 @@ function previousSlide() {
   var slide = $(currentSlide);
   var newSlide = slide.prev();
   if (newSlide.length) {
-    slideTransition(slide, newSlide);
+    slideTransition(slide, newSlide, 'previous');
   }
 }
 
-function slideTransition(slide, newSlide) {
+function slideTransition(slide, newSlide, direction) {
+  var otherDirection;
+  if (direction === 'next') {
+    otherDirection = 'previous';
+    slide.addClass(otherDirection + '-slide').removeClass('active-slide');
+    newSlide.removeClass(direction + '-slide').addClass('active-slide');
+  } else if (direction === 'previous') {
+    otherDirection = 'next';
+    slide.addClass(otherDirection + '-slide').removeClass('active-slide');
+    newSlide.removeClass(direction + '-slide').addClass('active-slide');
+  }
+
   window.location.hash = '#' + newSlide.attr('id');
   $('.active-li').removeClass('active-li');
   $('li[onclick*="#' + newSlide.attr('id') + '"').addClass('active-li');
-  slide.removeClass('active-slide');
-  newSlide.addClass('active-slide');
 }
 
 function changeSlide(slide) {

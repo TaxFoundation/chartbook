@@ -3,14 +3,13 @@ section {
   left: $nav-width;
   margin: 0 auto;
   max-width: 1080px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  opacity: 0;
   padding: 12px 40px;
   position: absolute;
   right: 0;
   top: $header-height;
   visibility: hidden;
-  @include transition(transform 0.5s ease-in-out);
+  @include transition(transform 0.5s ease-in-out, opacity 0.5s linear);
   @include set-font(16px);
 
   @include media-query($on-laptop) {
@@ -23,10 +22,20 @@ section {
   }
 }
 
+.slides {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .active-slide,
 .next-slide,
 .previous-slide {
   visibility: visible;
+}
+
+.active-slide {
+  opacity: 1;
+  transform: translate(0,0);
 }
 
 .next-slide {
