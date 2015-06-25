@@ -4,7 +4,6 @@ section {
   opacity: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 12px 40px;
   position: fixed;
   right: 0;
   top: $header-height;
@@ -14,17 +13,18 @@ section {
 
   @include media-query($on-laptop) {
     left: 0;
-    padding: 12px 20px;
-  }
-
-  @include media-query($on-palm) {
-    margin: 0 0 36px 0;
   }
 }
 
 .slide-container {
   margin: 0 auto;
   max-width: 1080px;
+  padding: 12px 40px;
+
+  @include media-query($on-palm) {
+    margin: 36px auto 0 auto;
+    padding: 12px 20px;
+  }
 }
 
 .active-slide,
@@ -66,14 +66,13 @@ img.chart-square {
   margin: 10px 0;
 
   @include media-query($on-palm) {
-    background: #fff;
-    bottom: 0;
     display: table;
     left: 0;
     margin: 0;
     padding: 0;
-    position: fixed;
+    position: absolute;
     right: 0;
+    top: 0;
     width: 100%;
   }
 }
