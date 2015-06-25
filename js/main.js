@@ -12,7 +12,7 @@ function setSlide() {
   var slideSection = $(slide);
   if (slideSection.length) {
     setSlideClasses(slideSection);
-    $('li[onclick*="' + slide + '"').addClass('active-li');
+    $('li[onclick*="' + slide + '"]').addClass('active-li');
   } else {
     window.location.hash = firstSlide;
     setSlideClasses($(firstSlide));
@@ -60,7 +60,7 @@ function slideTransition(slide, newSlide, direction) {
 
   window.location.hash = '#' + newSlide.attr('id');
   $('.active-li').removeClass('active-li');
-  $('li[onclick*="#' + newSlide.attr('id') + '"').addClass('active-li');
+  $('li[onclick*="#' + newSlide.attr('id') + '"]').addClass('active-li');
   slide.addClass(otherDirection + '-slide').removeClass('active-slide');
   newSlide.removeClass(direction + '-slide').addClass('active-slide');
 }
