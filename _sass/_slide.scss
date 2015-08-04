@@ -9,7 +9,7 @@ section {
   top: $header-height;
   visibility: hidden;
   @include transition(transform 0.4s ease-in-out, opacity 0.4s linear);
-  @include set-font(16px);
+  @include set-font(18px);
 
   @include media-query($on-laptop) {
     left: 0;

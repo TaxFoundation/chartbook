@@ -8,8 +8,24 @@ layout: default
 
 {% for s in site.slides %}
 
-<section id="{{ s.title | slugify }}">
-  {% include slide.html slide=s %}
-</section>
+  {% if s.page == 'cover' %}
+
+    <section class="cover" id="{{ s.title | slugify }}" {% if s.background %}style="background-image:url('images/{{ s.background }}');background-size:cover;"{% endif %}>
+      {% include cover.html slide=s %}
+    </section>
+
+  {% elsif s.page == 'chapter' %}
+
+    <section id="{{ s.title | slugify }}" {% if s.background %}style="background-image:url('images/{{ s.background }}');background-size:cover;"{% endif %}>
+      {% include chapter.html slide=s %}
+    </section>
+
+  {% else %}
+
+    <section id="{{ s.title | slugify }}">
+      {% include slide.html slide=s %}
+    </section>
+
+  {% endif %}
 
 {% endfor %}
