@@ -64,3 +64,9 @@ nav {
 .share-buttons {
   @include set-font();
 }
+
+.slide-title {
+  @include media-query($on-laptop) {
+    margin: 36px 0;
+  }
+}

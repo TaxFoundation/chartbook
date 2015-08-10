@@ -2,11 +2,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if site.description %}{{ site.description }}{% endif %}">
 
-  <link rel="stylesheet" href="{{ "css/main.css" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="canonical" href="{{ page.url | replace:'/index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
   <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png">
@@ -30,7 +31,7 @@
   <meta name="og:site_name" content="{{ site.title }}">
   <meta name="og:title" content="{{ site.title }}">
   <meta name="og:description" content="{{ site.description }}">
-  {% if site.meta_image %}<meta name="og:image" content="{{ site.meta_image | prepend: 'images/' | prepend: site.baseurl | prepend: site.url }}" />{% endif %}
+  {% if site.meta_image %}<meta name="og:image" content="{{ site.meta_image | prepend: 'images/' }}" />{% endif %}
   <meta name="og:locale" content="en_US" />
   <!-- Twitter Metadata -->
   <meta name="twitter:card" content="summary_large_image">
@@ -38,5 +39,5 @@
   <meta name="twitter:title" content="{{ site.title }}">
   <meta name="twitter:description" content="{% if site.description %}{{ site.description }}{% endif %}">
   <meta name="twitter:creator" content="{{ site.twitter_username }}">
-  {% if site.meta_image %}<meta name="twitter:image" content="{{ site.meta_image | prepend: 'images/' | prepend: site.baseurl | prepend: site.url }}" />{% endif %}
+  {% if site.meta_image %}<meta name="twitter:image" content="{{ site.meta_image | prepend: 'images/'  }}" />{% endif %}
 </head>
