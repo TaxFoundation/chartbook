@@ -51,12 +51,12 @@ section {
 
 .next-slide {
   left: 100%;
-  right: 200%;
+  right: 0;
 }
 
 .previous-slide {
-  left: -100%;
-  right: 0;
+  left: 0;
+  right: 100%;
 }
 
 img.chart-wide {
