@@ -4,6 +4,20 @@
   </div>
 
   <div class="chartbook-nav-icons">
+    <a
+      href="http://www.facebook.com/share.php?u={{ site.baseurl | prepend: site.url | uri_escape }}"
+      rel="nofollow"
+      target="_blank"
+      title="Share on Facebook">
+        <i class="fa fa-facebook"></i>
+    </a>
+    <a
+      href="https://twitter.com/intent/tweet/?text={{ site.description | prepend: ': ' | prepend: site.title | uri_escape }}&url={{ site.baseurl | prepend: site.url | uri_escape }}&via=TaxFoundation"
+      rel="nofollow"
+      target="_blank"
+      title="Tweet this content">
+        <i class="fa fa-twitter"></i>
+    </a>
     <i onclick="previousSlide()" class="fa fa-chevron-circle-left nav-button"></i>
     <i onclick="nextSlide()" class="fa fa-chevron-circle-right nav-button"></i>
   </div>

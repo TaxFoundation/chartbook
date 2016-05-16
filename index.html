@@ -10,7 +10,7 @@ layout: default
 
   {% if s.page == 'cover' %}
 
-    <section class="cover" id="{{ s.title | slugify }}" {% if s.background %}style="background-image:url('images/{{ s.background }}');background-size:cover;"{% endif %}>
+    <section class="cover" id="{{ s.title | slugify }}" {% if s.background %}style="background-image:url('images/{{ s.background }}');background-size:cover;background-position:50%;"{% endif %}>
       {% include cover.html slide=s %}
     </section>
 
