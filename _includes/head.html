@@ -33,11 +33,13 @@
   <meta name="msapplication-TileImage" content="{{ 'favicons/mstile-144x144.png' | prepend: images }}">
   <meta name="theme-color" content="#0094ff">
 
-  <meta name="og:site_name" content="{{ site.title }}">
-  <meta name="og:title" content="{{ site.title }}">
-  <meta name="og:description" content="{{ site.description }}">
-  {% if site.meta_image %}<meta name="og:image" content="{{ site.meta_image | prepend: '' | prepend: images }}" />{% endif %}
-  <meta name="og:locale" content="en_US" />
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:image" content="{{ site.meta_image | prepend: '/images/' | prepend: site.baseurl | prepend: site.url }}" />
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: canonical }}" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="fb:app_id" content="1667818153232107" />
   <!-- Twitter Metadata -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="{{ site.twitter_username }}">
