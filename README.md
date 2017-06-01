@@ -35,6 +35,8 @@ This is a chart about things and stuff. Whoo!
 **This text is bold**
 
 [This is a link to an external reference](http://example.com)
+
+> This text, with a leading greater-than sign, will show up as a note. Useful for naming data sources, etc. You can have [links within notes](http://example.com/note).
 ```
 
 ### Creating HTML files
